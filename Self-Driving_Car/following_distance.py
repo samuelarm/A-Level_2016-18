@@ -14,13 +14,21 @@ def get_equal_distance(dist_front, dist_rear):
     """ Function to return target following distance, ensuring that the
         vehicle in front and the vehicle behind are equidistant.
         """
-    # your code goes here
+    return (dist_front + dist_rear) / 2
 
 def get_safe_distance(curr_speed, weather):
     """ Function to return safe following distance as per UK regulations,
         e.g. the 2 second rule adapted to weather conditions.
         """ 
-    # your code goes here
+    if weather == "normal":
+        distance = (curr_speed / 10) * VEHICLE_LENGTH
+    elif weather == "poor":        
+        distance = ((curr_speed / 10) * VEHICLE_LENGTH) * 2    
+    
+    if distance < MIN_DISTANCE:        
+        return MIN_DISTANCE    
+    else:        
+        return distance 
 
 def main():
     """ Main function; contains various test cases for each scenario.

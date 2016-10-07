@@ -1,5 +1,5 @@
 """ Self-Driving Car: Following Distance
-    Name: 
+    Name: samuel armstrong
     Date: 
     """
 
@@ -10,17 +10,32 @@ MIN_DISTANCE = VEHICLE_LENGTH / 2
 
 # functions
 
-def get_equal_distance(dist_front, dist_rear):
+def get_equal_distance(distance_front, distance_rear, MIN_DISTANCE):
     """ Function to return target following distance, ensuring that the
         vehicle in front and the vehicle behind are equidistant.
         """
-    # your code goes here
+    total = distance_front + distance_rear
+    mid_point = total / MIN_DISTANCE
+    return mid_point
 
-def get_safe_distance(curr_speed, weather):
+def get_safe_distance(current_speed, weather, VEHICLE_LENGTH, MIN_DISTANCE):
     """ Function to return safe following distance as per UK regulations,
         e.g. the 2 second rule adapted to weather conditions.
-        """ 
-    # your code goes here
+        """
+
+    
+    if current_speed < 10:
+        mid_point = (VEHICLE_LENGTH / MIN_DISTANCE)
+    else:
+        mid_point = (current_speed/10)
+        mid_point = mid_point * VEHICLE_LENGTH
+    if weather != "normal":
+        mid_point = (mid_point * 2)
+    
+    
+        
+    return mid_point
+    
 
 def main():
     """ Main function; contains various test cases for each scenario.
@@ -35,21 +50,21 @@ def main():
     distance_front = 2  # meters
     distance_rear = 5   # meters
 
-    target_distance = get_equal_distance(distance_front, distance_rear)
+    target_distance = get_equal_distance(distance_front, distance_rear, MIN_DISTANCE)
     print(target_distance)
 
     # Test 2: (outputs 4.0)
     distance_front = 5  # meters
     distance_rear = 3   # meters
 
-    target_distance = get_equal_distance(distance_front, distance_rear)
+    target_distance = get_equal_distance(distance_front, distance_rear, MIN_DISTANCE)
     print(target_distance)
 
     # Test 3: (outputs 5.5)
     distance_front = 1  # meters
     distance_rear = 10  # meters
 
-    target_distance = get_equal_distance(distance_front, distance_rear)
+    target_distance = get_equal_distance(distance_front, distance_rear, MIN_DISTANCE)
     print(target_distance)
 
     # ----------------------------------------------------------
@@ -62,21 +77,21 @@ def main():
     current_speed = 0  # mph
     weather_condition = "normal"
 
-    target_distance = get_safe_distance(current_speed, weather_condition)
+    target_distance = get_safe_distance(current_speed, weather_condition, VEHICLE_LENGTH, MIN_DISTANCE)
     print(target_distance)
 
     # Test 2: (outputs 24.0)
     current_speed = 60  # mph
     weather_condition = "normal"
 
-    target_distance = get_safe_distance(current_speed, weather_condition)
+    target_distance = get_safe_distance(current_speed, weather_condition, VEHICLE_LENGTH, MIN_DISTANCE)
     print(target_distance)
 
     # Test 3: (outputs 48.0)
     current_speed = 60  # mph
     weather_condition = "poor"
 
-    target_distance = get_safe_distance(current_speed, weather_condition)
+    target_distance = get_safe_distance(current_speed, weather_condition,  VEHICLE_LENGTH, MIN_DISTANCE)
     print(target_distance)    
 
 

@@ -1,1 +1,339 @@
+#Samuel Armstrong
+#LMC Hardcode
+program_counter = 0
+dict_one = {'000' : 901, '001' : 902, '003' : 000}
+program_counter +=1
+if (dict_one['000']) == 000:
+    print ("end")
+elif (dict_one['000']) == 901:
+    accumulator = int(input("> "))
 
+program_counter +=1
+if (dict_one['001']) == 000:
+    print ("end")
+elif (dict_one['001']) == 901:
+    accumulator = int(input("> "))
+elif (dict_one['001']) == 902:
+    print (accumulator)
+
+program_counter +=1
+if (dict_one['003']) == 000:
+    print ("end")
+elif (dict_one['003']) == 901:
+    accumulator = int(input("> "))
+elif (dict_one['003']) == 902:
+    print (accumulator)
+
+
+#----------------------------------------------------------------------------
+#using memory
+
+program_counter = 0
+dict_two = {'000' : 901, '001' : 399, '002' : 901, '003' : 398, '004' :599, '005' : 902, '006' : 598, '007': 902, '099': 000, '098' : 000 }
+
+program_counter +=1
+if (dict_two['000']) == 000:
+    print ("end")
+elif (dict_two['000']) == 901:
+    accumulator = int(input("> "))
+elif (dict_two['000']) == 902:
+    print (accumulator)
+
+program_counter +=1
+if (dict_two['001']) == 000:
+    print ("end")
+elif (dict_two['001']) == 901:
+    accumulator = int(input("> "))
+elif (dict_two['001']) == 902:
+    print (accumulator)
+elif (dict_two['001']) == 399:
+    dict_two['099'] = accumulator
+
+program_counter +=1
+if (dict_two['002']) == 000:
+    print ("end")
+elif (dict_two['002']) == 901:
+    accumulator = int(input("> "))
+elif (dict_two['002']) == 902:
+    print (accumulator)
+elif (dict_two['002']) == 399:
+    dict_two['099'] = accumulator
+
+program_counter +=1
+if (dict_two['003']) == 000:
+    print ("end")
+elif (dict_two['003']) == 901:
+    accumulator = int(input("> "))
+elif (dict_two['003']) == 902:
+    print (accumulator)
+elif (dict_two['003']) == 398:
+    dict_two['098'] = accumulator
+
+program_counter +=1
+if (dict_two['004']) == 000:
+    print ("end")
+elif (dict_two['004']) == 901:
+    accumulator = int(input("> "))
+elif (dict_two['004']) == 902:
+    print (accumulator)
+elif (dict_two['004']) == 399:
+    dict_two['099'] = accumulator
+elif (dict_two['004']) == 599:
+    accumulator = dict_two['099']
+
+program_counter +=1
+if (dict_two['005']) == 000:
+    print ("end")
+elif (dict_two['005']) == 901:
+    accumulator = int(input("> "))
+elif (dict_two['005']) == 902:
+    print (accumulator)
+elif (dict_two['005']) == 399:
+    dict_two['099'] = accumulator
+elif (dict_two['005']) == 599:
+    accumulator = dict_two['099']
+
+program_counter +=1
+if (dict_two['006']) == 000:
+    print ("end")
+elif (dict_two['006']) == 901:
+    accumulator = int(input("> "))
+elif (dict_two['006']) == 902:
+    print (accumulator)
+elif (dict_two['006']) == 399:
+    dict_two['099'] = accumulator
+elif (dict_two['006']) == 598:
+    accumulator = dict_two['098']
+
+program_counter +=1
+if (dict_two['007']) == 000:
+    print ("end")
+elif (dict_two['007']) == 901:
+    accumulator = int(input("> "))
+elif (dict_two['007']) == 902:
+    print (accumulator)
+elif (dict_two['007']) == 399:
+    dict_two['099'] = accumulator
+elif (dict_two['007']) == 599:
+    accumulator = dict_two['099']
+
+#---------------------------------------------------------------------------------------------------
+#adding and subtracting
+program_counter = 0
+dict_three = {'000' : 901, '001' : 399, '002' : 901, '003' : 199, '004' :902, '005' : 901, '006' : 299, '007': 902, '008': 000, '099' : 000 }
+
+program_counter +=1
+if (dict_three['000']) == 000:
+    print ("end")
+elif (dict_three['000']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['000']) == 902:
+    print (accumulator)
+elif (dict_three['000']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['000']) == 599:
+    accumulator = dict_three['099']
+
+program_counter +=1
+if (dict_three['001']) == 000:
+    print ("end")
+elif (dict_three['001']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['001']) == 902:
+    print (accumulator)
+elif (dict_three['001']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['001']) == 599:
+    accumulator = dict_three['099']
+
+program_counter +=1
+if (dict_three['002']) == 000:
+    print ("end")
+elif (dict_three['002']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['002']) == 902:
+    print (accumulator)
+elif (dict_three['002']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['002']) == 599:
+    accumulator = dict_three['099']
+
+program_counter +=1
+if (dict_three['003']) == 000:
+    print ("end")
+elif (dict_three['003']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['003']) == 902:
+    print (accumulator)
+elif (dict_three['003']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['003']) == 599:
+    accumulator = dict_three['099']
+elif (dict_three['003']) == 199:
+    accumulator = accumulator + (dict_three['099'])
+
+program_counter +=1
+if (dict_three['004']) == 000:
+    print ("end")
+elif (dict_three['004']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['004']) == 902:
+    print (accumulator)
+elif (dict_three['004']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['004']) == 599:
+    accumulator = dict_three['099']
+elif (dict_three['004']) == 199:
+    accumulator = accumulator + (dict_three['099'])
+
+program_counter +=1
+if (dict_three['005']) == 000:
+    print ("end")
+elif (dict_three['005']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['005']) == 902:
+    print (accumulator)
+elif (dict_three['005']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['005']) == 599:
+    accumulator = dict_three['099']
+elif (dict_three['005']) == 199:
+    accumulator = accumulator + (dict_three['099'])
+
+program_counter +=1
+if (dict_three['006']) == 000:
+    print ("end")
+elif (dict_three['006']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['006']) == 902:
+    print (accumulator)
+elif (dict_three['006']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['006']) == 599:
+    accumulator = dict_three['099']
+elif (dict_three['006']) == 199:
+    accumulator = accumulator + (dict_three['099'])
+elif (dict_three['006']) == 299:
+    accumulator = accumulator - (dict_three['099'])
+
+program_counter +=1
+if (dict_three['007']) == 000:
+    print ("end")
+elif (dict_three['007']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['007']) == 902:
+    print (accumulator)
+elif (dict_three['007']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['007']) == 599:
+    accumulator = dict_three['099']
+elif (dict_three['007']) == 199:
+    accumulator = accumulator + (dict_three['099'])
+
+program_counter +=1
+if (dict_three['008']) == 000:
+    print ("end")
+elif (dict_three['008']) == 901:
+    accumulator = int(input("> "))
+elif (dict_three['008']) == 902:
+    print (accumulator)
+elif (dict_three['008']) == 399:
+    dict_three['099'] = accumulator
+elif (dict_three['008']) == 599:
+    accumulator = dict_three['099']
+elif (dict_three['008']) == 199:
+    accumulator = accumulator + (dict_three['099'])
+#----------------------------------------------------------------------------------------------------------------------------------------------
+#branching
+##program_counter = 0
+##dict_four = {'000' : 901, '001' : 399, '002' : 901, '003' : 398, '004' : 299, '005' : 809, '006' : 599 , '007': 902, '008': 611, '009' : 598, '010' :902, '011': 000, '099': 000, '098' :000}
+##
+##program_counter +=1
+##if (dict_four['000']) == 000:
+##    print ("end")
+##elif (dict_four['000']) == 901:
+##    accumulator = int(input("> "))
+##elif (dict_four['000']) == 902:
+##    print (accumulator)
+##elif (dict_four['000']) == 399:
+##    dict_four['099'] = accumulator
+##elif (dict_four['000']) == 599:
+##    accumulator = dict_four['099']
+##elif (dict_four['000']) == 199:
+##    accumulator = accumulator + (dict_four['099'])
+##
+##program_counter +=1
+##if (dict_four['001']) == 000:
+##    print ("end")
+##elif (dict_four['001']) == 901:
+##    accumulator = int(input("> "))
+##elif (dict_four['001']) == 902:
+##    print (accumulator)
+##elif (dict_four['001']) == 399:
+##    dict_four['099'] = accumulator
+##elif (dict_four['001']) == 599:
+##    accumulator = dict_four['099']
+##elif (dict_four['001']) == 199:
+##    accumulator = accumulator + (dict_four['099'])
+##
+##program_counter +=1
+##if (dict_four['002']) == 000:
+##    print ("end")
+##elif (dict_four['002']) == 901:
+##    accumulator = int(input("> "))
+##elif (dict_four['002']) == 902:
+##    print (accumulator)
+##elif (dict_four['002']) == 399:
+##    dict_four['099'] = accumulator
+##elif (dict_four['002']) == 599:
+##    accumulator = dict_four['099']
+##elif (dict_four['002']) == 199:
+##    accumulator = accumulator + (dict_four['099'])
+##                                 
+##program_counter +=1
+##if (dict_four['003']) == 000:
+##    print ("end")
+##elif (dict_four['003']) == 901:
+##    accumulator = int(input("> "))
+##elif (dict_four['003']) == 902:
+##    print (accumulator)
+##elif (dict_four['003']) == 398:
+##    dict_four['098'] = accumulator
+##elif (dict_four['003']) == 599:
+##    accumulator = dict_four['099']
+##elif (dict_four['003']) == 199:
+##    accumulator = accumulator + (dict_four['099'])
+##
+##program_counter +=1
+##if (dict_four['004']) == 000:
+##    print ("end")
+##elif (dict_four['004']) == 901:
+##    accumulator = int(input("> "))
+##elif (dict_four['004']) == 902:
+##    print (accumulator)
+##elif (dict_four['004']) == 399:
+##    dict_four['099'] = accumulator
+##elif (dict_four['004']) == 599:
+##    accumulator = dict_four['099']
+##elif (dict_four['004']) == 199:
+##    accumulator = accumulator + (dict_four['099'])
+##elif (dict_four['004']) == 299:
+##    accumulator = accumulator - (dict_four['099'])
+##
+##program_counter +=1
+##if (dict_four['005']) == 000:
+##    print ("end")
+##elif (dict_four['005']) == 901:
+##    accumulator = int(input("> "))
+##elif (dict_four['005']) == 902:
+##    print (accumulator)
+##elif (dict_four['005']) == 399:
+##    dict_four['099'] = accumulator
+##elif (dict_four['005']) == 599:
+##    accumulator = dict_four['099']
+##elif (dict_four['005']) == 199:
+##    accumulator = accumulator + (dict_four['099'])
+##elif (dict_four['005']) == 299:
+##    accumulator = accumulator - (dict_four['099'])
+##elif (dict_four['005']) == 809:
+## need to find out how to branch using this method 

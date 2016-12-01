@@ -1,8 +1,8 @@
 def get_ordinal(number):
     number_string = str(number)
     number_length = len(number_string)
-    first_digit = number_string[ number_length - 1 : number_length ]
-    second_digit = number_string[ number_length - 2 : number_length - 1]
+    first_digit = number_string[number_length - 1 : number_length]
+    second_digit = number_string[number_length - 2 : number_length - 1]
 
     if first_digit == "1" and second_digit != "1":
         return "st"
@@ -12,7 +12,6 @@ def get_ordinal(number):
         return "rd"
     else:
         return "th"
-
 
 def main():
     # test cases

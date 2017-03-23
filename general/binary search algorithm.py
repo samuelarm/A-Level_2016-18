@@ -2,7 +2,7 @@
 # binary search algorithm
 
 def binary_search(key, array, min, max):
-    """Function to return key index usinbg a recursive
+    """Function to return key index using a recursive
        binary search algorthim
        """
     
@@ -33,8 +33,7 @@ def linear_search(key, array, index):
     
 
 
-
-#tests
+#tests against this array of anaimals with A-Z all upercase as lower case come after uppercase value wise
 test_array = ["Aardvark", "Badger", "Cat", "Dog", "Eagle", "Frog", "Gecko", "Honey Badger",
               "Iguana", "Jackal", "Kid", "Llama", "Monkey", "Narwhal", "Ostrich", "Penguin",
               "Quail", "Rhinoceros", "Snake", "Tapir", "Upupa", "Viper", "Whale", "Xenon",
@@ -44,6 +43,8 @@ test_cases = ["Viper", "buffalo", "Hedgehog", "Jackal", "Kid", "Seahorse", "Peng
 
 
 #loop to searchy for our test data within the test array
+print ("binary search using recursion")
+print("\n")
 for case in test_cases:
     position = binary_search (case, test_array, 0, len(test_array) - 1) + 1
     if position > 0:
@@ -53,7 +54,8 @@ for case in test_cases:
 
 print("\n")
 print("\n")
-
+print ("linear search using recursion")
+print("\n")
 for case in test_cases:
     position = linear_search (case, test_array, 0) + 1
     if position > 0:

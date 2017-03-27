@@ -1,0 +1,14 @@
+#Samuel Armstrong
+#coding challange speeed tracker pseudo code
+import time 
+function speed_calculation (time_one, time_two, distance)
+	difference = time_one - time_two 
+	average_speed = (distance/difference)
+	return average_speed
+end fucntion
+
+distance = 1
+time_one = time.time()
+time_two = time.time()
+miles_per_hour = speed_calculation(time_one, time_two, distance)
+print (miles_per_hour)

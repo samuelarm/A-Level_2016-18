@@ -1,0 +1,4 @@
+#Samuel Armstrong
+#coding challange speeed tracker pseudo code
+
+function speed_calculation

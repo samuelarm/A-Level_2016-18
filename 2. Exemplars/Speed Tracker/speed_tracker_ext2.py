@@ -82,13 +82,14 @@ def generate_random_data():
 
     return data_list
 
-def process_data_log(filename):
-    """ Function to process speed tracking log data and return
+def process_data_log(data_list):
+    """ Function to process speed tracking data list and return
         a list of offending vehicles (i.e. those exceeding the  
         speed limit of 70 mph or with an invalid number plate).
         """
     offence_log = []
-    for record in load_data(filename):
+
+    for record in data_list:
         attributes = record.replace("\n", "").split(sep=",")
         average_speed = calculate_average_speed(attributes[0], attributes[1])
         valid_number_plate = validate_number_plate(attributes[2])
@@ -106,31 +107,25 @@ def process_data_log(filename):
         if add_to_log:
             offence_log.append(log)
     
-    for log in offence_log:
-        print(log)
+    return offence_log
         
 
 def main():
-    # save_data("2. Exemplars/Speed Tracker/random_data.txt", generate_random_data())
-    # save_data("2. Exemplars/Speed Tracker/speed_tracker.log", process_data_log(load_data("2. Exemplars/Speed Tracker/random_data.txt")))
-    
+    """ Main program
+        """
     # random_data = generate_random_data()
     # save_data("2. Exemplars/Speed Tracker/random_data.txt", random_data)
-    # log_data = load_data("2. Exemplars/Speed Tracker/random_data.txt")
-    # processed_data = process_data_log(log_data)
-    # save_data("2. Exemplars/Speed Tracker/speed_tracker.log", processed_data)
 
-    process_data_log("2. Exemplars/Speed Tracker/random_data.txt")
+    data_log = load_data("2. Exemplars/Speed Tracker/random_data.txt")
+    for record in data_log:
+        print(record)
+
+    processed_data_log = process_data_log(data_log)
+    for record in processed_data_log:
+        print(record)
+
+    # save_data("2. Exemplars/Speed Tracker/speed_tracker.log", processed_data_log)
+
 
 if __name__ == "__main__":
     main()
-
-#-----------------
-# test
-# print(calculate_average_speed("15:00:00", "15:00:45"), "mph")
-# print(validate_number_plate("ET25 HME"))
-# print(validate_number_plate("2COO L4U"))
-
-# log = load_data("2. Exemplars/Speed Tracker/speed_tracker.log")
-# print(log)
-

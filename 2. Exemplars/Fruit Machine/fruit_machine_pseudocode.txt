@@ -1,0 +1,54 @@
+player_credit = 100 // Pence
+array symbol[6] = ["Cherry", "Bell", "Lemon", "Orange", "Star", "Skull"]
+array symbol_count[6]
+array wheel[3] = [0, 0, 0]
+
+// Main game loop
+
+game_is_running = True
+while game_is_running == True
+
+	if player_credit < 20 then // End game if player has no credit
+		game_is_running = False
+		break
+	else then // Continue with game
+		player_credit = player_credit - 20 // Deduct cost of game
+		// Set symbol counts to zero
+		for i=0 to 6
+			symbol_count[i] = 0
+		next i
+		// Spin the wheels and tally the occurence of each symbol
+		for i=0 to 3
+			index = random.randint(0, 5)
+			wheel[i] = index
+			symbol_count[index] = symbol_count[index] + 1
+		next i
+		
+		// Win/lose conditions
+		for i=0 to 6
+			if symbol_count[i] == 2 then // two matching symbols
+				if symbol[i] == "Skull" then
+					player_credit = player_credit - 100 // Lose £1 for 2 skulls
+				else
+					player_credit = player_credit + 50 // Win 50p
+				endif
+				break // Exit for loop
+			elseif symbol_count[i] == 3 then // three matching symbols
+				if symbol[i] == "Skull" then
+					player_credit = 0 // Lose all credit for 3 skulls
+				elseif symbol[i] == "Bell" then
+					player_credit = player_credit + 500 // Win £5 for 3 bells
+				else
+					player_credit = player_credit + 100 // Win £1
+				endif
+				break // Exit for loop
+			endif
+		next i
+	endif
+	
+	// Allow player to cash out or spin again
+	spin_again = input("Play again? (Y/N) ")
+	if spin_again == "N" then
+		game_is_running = False // Terminate while loop
+
+endwhile

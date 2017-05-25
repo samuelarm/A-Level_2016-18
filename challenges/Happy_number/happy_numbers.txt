@@ -1,0 +1,17 @@
+function happy_number (number):
+	record = []
+	total = 0
+	number = str(number)
+	for i in number:
+		i = int(i)
+		total = total + i^2
+		if total in record:
+			record.append(total)
+		end if 
+		next i
+	end for
+	if total == 1:
+		return True
+	else:
+		return (happy_number(total))
+	end if 
